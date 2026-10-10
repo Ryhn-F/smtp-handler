@@ -10,7 +10,7 @@
 
 require('dotenv').config();
 
-const { createApp } = require('./src/app');
+const { createApp } = require('./src/create-app');
 
 const { app, config, logger } = createApp();
 

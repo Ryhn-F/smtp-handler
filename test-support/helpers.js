@@ -1,7 +1,7 @@
 'use strict';
 
 const crypto = require('node:crypto');
-const { createApp } = require('../src/app');
+const { createApp } = require('../src/create-app');
 const { createLogger } = require('../src/logger');
 const { sign } = require('../src/webhook');
 
