@@ -1,0 +1,6 @@
+Setujui perubahan email
+
+Ada permintaan untuk mengganti alamat email akun DentisAI Anda. Buka tautan di bawah untuk menyetujuinya:
+{{ConfirmationURL}}
+
+Jika Anda tidak meminta ini, abaikan email ini dan segera ganti kata sandi Anda.

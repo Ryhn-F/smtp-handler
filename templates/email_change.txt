@@ -1,0 +1,6 @@
+Konfirmasi perubahan email
+
+Buka tautan di bawah untuk memakai alamat email ini pada akun DentisAI:
+{{ConfirmationURL}}
+
+Jika Anda tidak meminta ini, abaikan email ini.

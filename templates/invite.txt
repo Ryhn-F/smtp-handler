@@ -1,0 +1,6 @@
+Undangan akun DentisAI
+
+Anda diundang untuk memakai akun DentisAI. Buka tautan di bawah untuk menerima undangan:
+{{ConfirmationURL}}
+
+Jika Anda tidak merasa diundang, abaikan email ini.

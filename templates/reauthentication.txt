@@ -1,0 +1,6 @@
+Kode verifikasi
+
+Masukkan kode ini di aplikasi DentisAI untuk melanjutkan:
+{{Token}}
+
+Jangan berikan kode ini kepada siapa pun. Jika Anda tidak memintanya, abaikan email ini dan segera ganti kata sandi Anda.

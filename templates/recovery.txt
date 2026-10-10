@@ -1,0 +1,6 @@
+Atur ulang kata sandi
+
+Buka tautan di bawah untuk membuat kata sandi baru akun DentisAI:
+{{ConfirmationURL}}
+
+Jika Anda tidak meminta ini, abaikan email ini. Kata sandi Anda tidak berubah.

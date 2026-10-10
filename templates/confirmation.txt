@@ -1,0 +1,6 @@
+Konfirmasi email Anda
+
+Buka tautan di bawah untuk mengaktifkan akun DentisAI:
+{{ConfirmationURL}}
+
+Jika Anda tidak mendaftar, abaikan email ini.

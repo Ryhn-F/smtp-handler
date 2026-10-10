@@ -1,23 +1,23 @@
 {
-  "name": "expresstry",
+  "name": "dentisai-mailer",
   "version": "1.0.0",
+  "description": "HTTPS receiver for the Supabase Auth \"Send Email\" hook (DentisAI). Verifies Standard Webhooks signatures and sends auth emails over SMTP.",
   "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prisma:init": "prisma init"
+    "start": "node index.js",
+    "test": "node --test",
+    "make-test-webhook": "node scripts/make-test-webhook.js"
+  },
+  "engines": {
+    "node": ">=20"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "@prisma/client": "^6.8.1",
-    "cors": "^2.8.6",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "nodemailer": "^9.0.5"
-  },
-  "devDependencies": {
-    "prisma": "^6.8.1"
+    "nodemailer": "^10.0.16"
   }
 }
