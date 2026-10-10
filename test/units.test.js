@@ -182,3 +182,10 @@ test('logger drops unknown fields and redacts unsafe values', () => {
   assert.equal(o.action, 'signup');
   assert.equal(o.count, 2);
 });
+
+test('embedded templates are up to date with templates/ (run npm run build:templates)', () => {
+  const { build } = require('../scripts/build-templates');
+  const generated = build(path.join(__dirname, '..', 'templates'));
+  const onDisk = fs.readFileSync(path.join(__dirname, '..', 'src', 'templates-data.js'), 'utf8');
+  assert.equal(onDisk, generated);
+});

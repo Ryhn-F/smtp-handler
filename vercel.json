@@ -1,8 +1,0 @@
-{
-  "functions": {
-    "index.js": {
-      "includeFiles": "templates/**",
-      "maxDuration": 10
-    }
-  }
-}

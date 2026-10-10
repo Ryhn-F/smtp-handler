@@ -3,7 +3,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const TEMPLATE_DIR = path.join(__dirname, '..', 'templates');
+const EMBEDDED = require('./templates-data');
 
 const NAMES = [
   'confirmation',
@@ -60,15 +60,31 @@ function stripCrLf(value) {
   return String(value).replace(/[\r\n]+/g, ' ');
 }
 
-function loadTemplates(dir = TEMPLATE_DIR) {
+function prepare(name, rawHtml, rawText) {
+  return {
+    html: rawHtml.replace(/<!--[\s\S]*?-->/g, '').trim(), // owner-review comments must not be sent
+    text: rawText.trim(),
+    subject: SUBJECTS[name],
+  };
+}
+
+/**
+ * Without `dir`: templates embedded at build time (src/templates-data.js) - no file reads,
+ * works on serverless. With `dir`: read from disk (used by tests and local template editing).
+ */
+function loadTemplates(dir) {
   const out = {};
   for (const name of NAMES) {
-    const html = fs
-      .readFileSync(path.join(dir, `${name}.html`), 'utf8')
-      .replace(/<!--[\s\S]*?-->/g, '') // owner-review comments must not be sent
-      .trim();
-    const text = fs.readFileSync(path.join(dir, `${name}.txt`), 'utf8').trim();
-    out[name] = { html, text, subject: SUBJECTS[name] };
+    if (dir) {
+      out[name] = prepare(
+        name,
+        fs.readFileSync(path.join(dir, `${name}.html`), 'utf8'),
+        fs.readFileSync(path.join(dir, `${name}.txt`), 'utf8'),
+      );
+    } else {
+      const t = EMBEDDED[name];
+      out[name] = prepare(name, t.html, t.text);
+    }
   }
   return out;
 }
