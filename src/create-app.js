@@ -1,6 +1,6 @@
 'use strict';
 
-const express = require('express');
+const defaultExpress = require('express');
 const nodemailer = require('nodemailer');
 
 const { loadConfig } = require('./config');
@@ -57,6 +57,9 @@ function withDeadline(promise, ms) {
  * @param {object} [opts.logger]
  */
 function createApp(opts = {}) {
+  // `express` can be injected: index.js imports it itself because Vercel's entrypoint detection
+  // only accepts a file that directly imports express.
+  const express = opts.express || defaultExpress;
   const env = opts.env || process.env;
   const now = opts.now || Date.now;
   const logger = opts.logger || createLogger();

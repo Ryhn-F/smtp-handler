@@ -10,9 +10,11 @@
 
 require('dotenv').config();
 
+// Vercel's Express detection requires the entrypoint itself to import express.
+const express = require('express');
 const { createApp } = require('./src/create-app');
 
-const { app, config, logger } = createApp();
+const { app, config, logger } = createApp({ express });
 
 if (!config.ok) {
   // Names only, never values. The hook endpoint answers 503 until fixed.
